@@ -1,103 +1,234 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function Home() {
+const sliderImages = [
+  "/epe-01.jpg",
+  "/epe-02.jpg",
+  "/epe-01.jpg",
+  "/epe-02.jpg",
+];
+
+const sponsors = [
+  "/bamidele.jpg",
+  "/bamidele.jpg",
+  "/bamidele.jpg",
+  "/bamidele.jpg",
+];
+
+export default function HomePage() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % sliderImages.length);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+      {/* Decorative floating bubbles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-white/10 backdrop-blur-sm"
+            style={{
+              width: `${Math.random() * 150 + 50}px`,
+              height: `${Math.random() * 150 + 50}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -20, 0],
+              x: [0, 10, 0],
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: Math.random() * 5 + 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <main className="max-w-7xl mx-auto px-4 py-16 space-y-20 relative z-10">
+        <section className="relative w-full h-[600px] overflow-hidden rounded-3xl shadow-2xl">
+          {/* Gradient overlay for slider */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/80 to-purple-600/80 z-10"></div>
+
+          <AnimatePresence>
+            <motion.div
+              key={sliderImages[index]}
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5 }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <Image
+                src={sliderImages[index]}
+                alt="Ojude Oba Image"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="absolute inset-0 flex items-center justify-center z-20">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="text-center text-white px-6"
+            >
+              <h1 className="text-6xl font-extrabold mb-6 drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">
+                Welcome to Ojude Oba Epe
+              </h1>
+              <p className="text-2xl max-w-2xl mx-auto font-light text-white/90 backdrop-blur-sm bg-white/10 p-6 rounded-xl">
+                An annual celebration of culture, royal heritage, and the unity
+                of the Epe people
+              </p>
+              <motion.button
+                className="mt-8 px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Learn More
+              </motion.button>
+            </motion.div>
+          </div>
+
+          {/* Animated dots for slider navigation */}
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-20">
+            {sliderImages.map((_, i) => (
+              <motion.button
+                key={i}
+                className={`w-3 h-3 rounded-full ${
+                  i === index ? "bg-white" : "bg-white/40"
+                }`}
+                onClick={() => setIndex(i)}
+                whileHover={{ scale: 1.2 }}
+                animate={{ scale: i === index ? 1.2 : 1 }}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* About Section with Gradient Card */}
+        <section className="grid md:grid-cols-2 gap-10 px-4">
+          <motion.div
+            className="bg-gradient-to-br from-sky-400 to-blue-600 p-8 rounded-3xl shadow-xl"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h2 className="text-3xl font-bold text-white mb-4">Our Festival</h2>
+            <p className="text-white/90 text-lg">
+              Experience the vibrant colors, sounds, and traditions of Ojude
+              Oba, a festival that brings together the community in celebration
+              of our rich cultural heritage.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="bg-gradient-to-br from-amber-400 to-orange-500 p-8 rounded-3xl shadow-xl"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
           >
-            Read our docs
-          </a>
-        </div>
+            <h2 className="text-3xl font-bold text-white mb-4">Join Us</h2>
+            <p className="text-white/90 text-lg">
+              Be part of this magnificent celebration that dates back
+              generations. Immerse yourself in the music, dance, food, and
+              traditions that make Ojude Oba special.
+            </p>
+          </motion.div>
+        </section>
+
+        {/* Our Sponsors Section - Kept as requested */}
+        <section className="overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md p-8">
+          <h2 className="text-center text-3xl font-bold mb-10 text-white">
+            Our Sponsors
+          </h2>
+          <motion.div
+            className="flex space-x-20 px-4 w-max"
+            initial={{ x: 0 }}
+            animate={{ x: "-50%" }}
+            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          >
+            {[...sponsors, ...sponsors].map((logo, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center w-[120px] h-[80px] bg-white shadow rounded-xl"
+              >
+                <Image
+                  src={logo}
+                  alt={`Sponsor ${i + 1}`}
+                  width={100}
+                  height={60}
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </motion.div>
+        </section>
+
+        {/* Added events section with colorful cards */}
+        <section className="px-4">
+          <h2 className="text-center text-3xl font-bold mb-10 text-white">
+            Upcoming Events
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Opening Ceremony",
+                date: "June 15, 2025",
+                color: "from-pink-500 to-rose-500",
+              },
+              {
+                title: "Cultural Parade",
+                date: "June 16, 2025",
+                color: "from-cyan-500 to-blue-500",
+              },
+              {
+                title: "Grand Finale",
+                date: "June 18, 2025",
+                color: "from-emerald-500 to-green-600",
+              },
+            ].map((event, i) => (
+              <motion.div
+                key={i}
+                className={`bg-gradient-to-br ${event.color} p-6 rounded-2xl shadow-lg text-white hover:shadow-xl`}
+                whileHover={{ y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+                <p className="text-white/90">{event.date}</p>
+                <div className="mt-4 flex justify-end">
+                  <button className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm backdrop-blur-sm">
+                    Learn More
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Footer with gradient */}
+        {/* <footer className="mt-20 py-10 border-t border-white/20 text-center text-white/70">
+          <p>© 2025 Ojude Oba Epe Festival. All rights reserved.</p>
+        </footer> */}
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
