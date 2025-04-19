@@ -11,10 +11,12 @@ const sliderImages = [
 ];
 
 const sponsors = [
-  "/bamidele.jpg",
-  "/bamidele.jpg",
-  "/bamidele.jpg",
-  "/bamidele.jpg",
+  "/epe-01.jpg",
+  "/epe-01.jpg",
+  "/epe-01.jpg",
+  "/epe-01.jpg",
+  "/epe-01.jpg",
+  "/epe-01.jpg",
 ];
 
 export default function HomePage() {
