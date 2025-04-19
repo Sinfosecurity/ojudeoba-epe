@@ -27,28 +27,28 @@ const businesses: Business[] = [
     description:
       "Selling quality Aso-Oke, Ankara, and lace materials for all your occasions.",
     category: "Clothing",
-    image: "/marketplace1.jpg",
+    image: "/epe-03.jpg",
   },
   {
     id: 2,
     name: "Royal Kitchen Delicacies",
     description: "Catering native Epe dishes with a taste of royalty.",
     category: "Food",
-    image: "/marketplace2.jpg",
+    image: "/epe-04.jpg",
   },
   {
     id: 3,
     name: "Eko Jewelry House",
     description: "Exquisite traditional and modern jewelry collections.",
     category: "Accessories",
-    image: "/marketplace3.jpg",
+    image: "/epe-05.jpg",
   },
   {
     id: 4,
     name: "Oba Footwears",
     description: "Stylish handcrafted footwear inspired by Yoruba culture.",
     category: "Footwear",
-    image: "/marketplace4.jpg",
+    image: "/epe-06.jpg",
   },
 ];
 

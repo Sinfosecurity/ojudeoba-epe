@@ -100,7 +100,7 @@ const events: Event[] = [
     date: "June 18, 2025",
     time: "12:00 PM - 4:00 PM",
     location: "Epe Main Boulevard",
-    image: "/epe-02.jpg",
+    image: "/epe-01.jpg",
     description:
       "The festival highlight featuring a magnificent parade of royal regalia, horsemen, cultural troupes, and community groups in their finest attire.",
     category: "Main Event",

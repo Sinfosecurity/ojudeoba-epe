@@ -16,7 +16,7 @@ const royalLineage = [
     name: "Oba Adewale Adesanya",
     reign: "1985 - Present",
     title: "Oloja of Epe",
-    image: "/royal1.jpg",
+    image: "/epe-01.jpg",
     bio: "His Royal Majesty Oba Adewale Adesanya has led Epe with wisdom and compassion. Under his reign, the community has seen tremendous cultural revival and modernization while maintaining its rich traditions.",
     achievements: [
       "Established the annual Ojude Oba festival as a national cultural event",
@@ -29,7 +29,7 @@ const royalLineage = [
     name: "Oba Kazeem Olatunji",
     reign: "1952 - 1985",
     title: "Oloja of Epe",
-    image: "/royal2.jpg",
+    image: "/epe-01.jpg",
     bio: "Oba Kazeem Olatunji guided Epe through the post-independence era with firm leadership. His reign saw major infrastructure development while preserving the cultural integrity of the kingdom.",
     achievements: [
       "Navigated the transition from colonial rule to independence",
@@ -42,7 +42,7 @@ const royalLineage = [
     name: "Oba Suleiman Bamgbade",
     reign: "1918 - 1952",
     title: "Oloja of Epe",
-    image: "/royal3.jpg",
+    image: "/epe-01.jpg",
     bio: "During his long reign, Oba Suleiman Bamgbade preserved Epe traditions against colonial pressures while adapting to changing times. His diplomatic skills helped maintain Epe's semi-autonomous status.",
     achievements: [
       "Protected traditional land rights during colonial period",
@@ -57,7 +57,7 @@ const royalArtifacts = [
   {
     id: 1,
     name: "Royal Crown (Ade)",
-    image: "/artifact1.jpg",
+    image: "/epe-01.jpg",
     description:
       "The sacred crown of the Oloja, adorned with coral beads and gold emblems representing authority and divine connection.",
     age: "Over 200 years old",
@@ -65,7 +65,7 @@ const royalArtifacts = [
   {
     id: 2,
     name: "Royal Staff (Opa Ase)",
-    image: "/artifact2.jpg",
+    image: "/epe-01.jpg",
     description:
       "Symbol of the king's authority and judicial power, this ceremonial staff is used during important proclamations.",
     age: "Approximately 185 years old",
@@ -73,7 +73,7 @@ const royalArtifacts = [
   {
     id: 3,
     name: "Ceremonial Sword",
-    image: "/artifact3.jpg",
+    image: "/epe-01.jpg",
     description:
       "Used during royal installations, this sword represents the king's role as protector and defender of the kingdom.",
     age: "Early 19th century",
@@ -81,7 +81,7 @@ const royalArtifacts = [
   {
     id: 4,
     name: "Royal Drums (Gbedu)",
-    image: "/artifact4.jpg",
+    image: "/epe-01.jpg",
     description:
       "These sacred drums are played only during royal ceremonies and are believed to communicate with ancestral spirits.",
     age: "Over 150 years old",
@@ -359,7 +359,7 @@ export default function RoyalHeritagePage() {
                 className="relative h-[500px] rounded-2xl overflow-hidden group"
               >
                 <Image
-                  src="/ceremony1.jpg"
+                  src="/epe-01.jpg"
                   alt="Royal Coronation Ceremony"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -561,11 +561,6 @@ export default function RoyalHeritagePage() {
           </section>
         </ScrollReveal>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-t from-black to-transparent pt-20 pb-10 text-center text-white/70">
-        <p>© 2025 Royal Heritage of Epe. All rights reserved.</p>
-      </footer>
     </div>
   );
 }
