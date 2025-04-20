@@ -13,7 +13,7 @@ interface ScrollRevealProps {
 const royalLineage = [
   {
     id: 1,
-    name: "Oba Olatunji Adewale",
+    name: "Oba Shefiu Olatunji Adewale",
     reign: "1985 - Present",
     title: "Oloja of Epe",
     image: "/epe-01.jpg",
