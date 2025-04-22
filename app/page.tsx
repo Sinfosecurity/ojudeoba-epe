@@ -30,13 +30,13 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-amber-100 to-amber-200">
       {/* Decorative floating bubbles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-white/10 backdrop-blur-sm"
+            className="absolute rounded-full bg-gradient-to-r from-yellow-400/10 to-amber-300/10 backdrop-blur-sm"
             style={{
               width: `${Math.random() * 150 + 50}px`,
               height: `${Math.random() * 150 + 50}px`,
@@ -58,9 +58,9 @@ export default function HomePage() {
       </div>
 
       <main className="max-w-7xl mx-auto px-4 py-16 space-y-20 relative z-10">
-        <section className="relative w-full h-[600px] overflow-hidden rounded-3xl shadow-2xl">
+        <section className="relative w-full h-[600px] mt-5 overflow-hidden rounded-3xl shadow-2xl">
           {/* Gradient overlay for slider */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/80 to-purple-600/80 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r z-10"></div>
 
           <AnimatePresence>
             <motion.div
@@ -88,7 +88,7 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.5 }}
               className="text-center text-white px-6"
             >
-              <h1 className="text-6xl font-extrabold mb-6 drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">
+              <h1 className="text-6xl font-extrabold mb-6 drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-white to-amber-200">
                 Welcome to Ojude Oba Epe
               </h1>
               <p className="text-2xl max-w-2xl mx-auto font-light text-white/90 backdrop-blur-sm bg-white/10 p-6 rounded-xl">
@@ -96,7 +96,7 @@ export default function HomePage() {
                 of the Epe people
               </p>
               <motion.button
-                className="mt-8 px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl"
+                className="mt-8 px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -124,7 +124,7 @@ export default function HomePage() {
         {/* About Section with Gradient Card */}
         <section className="grid md:grid-cols-2 gap-10 px-4">
           <motion.div
-            className="bg-gradient-to-br from-sky-400 to-blue-600 p-8 rounded-3xl shadow-xl"
+            className="bg-gradient-to-br from-amber-300 to-amber-500 p-8 rounded-3xl shadow-xl"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -139,7 +139,7 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div
-            className="bg-gradient-to-br from-amber-400 to-orange-500 p-8 rounded-3xl shadow-xl"
+            className="bg-gradient-to-br from-yellow-400 to-amber-600 p-8 rounded-3xl shadow-xl"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -154,9 +154,9 @@ export default function HomePage() {
           </motion.div>
         </section>
 
-        {/* Our Sponsors Section - Kept as requested */}
-        <section className="overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md p-8">
-          <h2 className="text-center text-3xl font-bold mb-10 text-white">
+        {/* Our Sponsors Section */}
+        <section className="overflow-hidden rounded-2xl bg-amber-100/60 backdrop-blur-md p-8 border border-amber-300/50 shadow-xl">
+          <h2 className="text-center text-3xl font-bold mb-10 text-amber-700">
             Our Sponsors
           </h2>
           <motion.div
@@ -182,9 +182,9 @@ export default function HomePage() {
           </motion.div>
         </section>
 
-        {/* Added events section with colorful cards */}
+        {/* Events section with amber/yellow cards */}
         <section className="px-4">
-          <h2 className="text-center text-3xl font-bold mb-10 text-white">
+          <h2 className="text-center text-3xl font-bold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
             Upcoming Events
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -192,17 +192,17 @@ export default function HomePage() {
               {
                 title: "Opening Ceremony",
                 date: "June 15, 2025",
-                color: "from-pink-500 to-rose-500",
+                color: "from-amber-300 to-amber-500",
               },
               {
                 title: "Cultural Parade",
                 date: "June 16, 2025",
-                color: "from-cyan-500 to-blue-500",
+                color: "from-yellow-400 to-amber-500",
               },
               {
                 title: "Grand Finale",
                 date: "June 18, 2025",
-                color: "from-emerald-500 to-green-600",
+                color: "from-amber-500 to-yellow-600",
               },
             ].map((event, i) => (
               <motion.div
@@ -227,7 +227,7 @@ export default function HomePage() {
         </section>
 
         {/* Footer with gradient */}
-        {/* <footer className="mt-20 py-10 border-t border-white/20 text-center text-white/70">
+        {/* <footer className="mt-20 py-10 border-t border-amber-200/20 text-center text-amber-800">
           <p>© 2025 Ojude Oba Epe Festival. All rights reserved.</p>
         </footer> */}
       </main>

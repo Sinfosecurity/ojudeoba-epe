@@ -123,13 +123,13 @@ export default function RoyalHeritagePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-amber-700">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-amber-100 to-amber-200">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-gradient-to-r from-yellow-300/10 to-amber-500/10 backdrop-blur-sm"
+            className="absolute rounded-full bg-gradient-to-r from-yellow-400/10 to-amber-300/10 backdrop-blur-sm"
             style={{
               width: `${Math.random() * 300 + 100}px`,
               height: `${Math.random() * 300 + 100}px`,
@@ -152,7 +152,7 @@ export default function RoyalHeritagePage() {
 
       {/* Hero Section */}
       <header className="relative h-[500px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-indigo-900/90 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-amber-100/90 z-10"></div>
         <div className="absolute inset-0 bg-[url('/royal-palace.jpg')] bg-cover bg-center"></div>
 
         <div className="relative z-20 flex items-center justify-center h-full text-center px-4">
@@ -175,10 +175,10 @@ export default function RoyalHeritagePage() {
                 className="mx-auto"
               />
             </motion.div>
-            <h1 className="text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500">
+            <h1 className="text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
               Royal Heritage
             </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl text-amber-800 max-w-2xl mx-auto">
               Discover the majestic lineage and cultural legacy of Epe&apos;s
               royal dynasty, guardians of tradition and embodiment of our
               cultural identity
@@ -192,10 +192,10 @@ export default function RoyalHeritagePage() {
         <ScrollReveal>
           <section className="mb-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500">
+              <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
                 Royal Lineage
               </h2>
-              <p className="text-white/80 max-w-2xl mx-auto">
+              <p className="text-amber-800 max-w-2xl mx-auto">
                 The unbroken line of monarchs who have guided Epe through
                 generations, preserving our traditions while adapting to
                 changing times
@@ -204,8 +204,8 @@ export default function RoyalHeritagePage() {
 
             <div className="grid md:grid-cols-12 gap-8 items-start">
               {/* Monarch Selection */}
-              <div className="md:col-span-4 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-xl">
-                <h3 className="text-xl font-semibold text-white mb-4">
+              <div className="md:col-span-4 bg-amber-100/60 backdrop-blur-md rounded-2xl p-6 border border-amber-300/50 shadow-xl">
+                <h3 className="text-xl font-semibold text-amber-700 mb-4">
                   Monarchs of Epe
                 </h3>
                 <motion.ul
@@ -221,14 +221,14 @@ export default function RoyalHeritagePage() {
                         onClick={() => setSelectedMonarch(monarch)}
                         className={`w-full text-left p-4 rounded-xl transition-all ${
                           selectedMonarch.id === monarch.id
-                            ? "bg-gradient-to-r from-amber-600/50 to-amber-800/50 border-l-4 border-amber-400"
-                            : "hover:bg-white/5"
+                            ? "bg-gradient-to-r from-amber-200/80 to-amber-300/80 border-l-4 border-amber-500"
+                            : "hover:bg-amber-200/50"
                         }`}
                       >
-                        <div className="font-bold text-white">
+                        <div className="font-bold text-amber-800">
                           {monarch.name}
                         </div>
-                        <div className="text-amber-300/90 text-sm">
+                        <div className="text-amber-600 text-sm">
                           {monarch.reign}
                         </div>
                       </button>
@@ -243,7 +243,7 @@ export default function RoyalHeritagePage() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="md:col-span-8 bg-gradient-to-br from-amber-900/30 to-purple-900/30 backdrop-blur-md rounded-2xl overflow-hidden border border-amber-500/20 shadow-xl"
+                className="md:col-span-8 bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-2xl overflow-hidden border border-amber-300/50 shadow-xl"
               >
                 <div className="grid md:grid-cols-2">
                   <div className="h-64 md:h-auto relative">
@@ -253,29 +253,29 @@ export default function RoyalHeritagePage() {
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                    <div className="absolute inset-0 bg-gradient-to-t from-amber-800/60 to-transparent flex items-end p-4">
                       <div>
-                        <h3 className="text-2xl font-bold text-white">
+                        <h3 className="text-2xl font-bold text-amber-50">
                           {selectedMonarch.name}
                         </h3>
-                        <p className="text-amber-300">
+                        <p className="text-amber-200">
                           {selectedMonarch.title} | {selectedMonarch.reign}
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className="p-6 space-y-4">
-                    <p className="text-white/90">{selectedMonarch.bio}</p>
+                    <p className="text-amber-900">{selectedMonarch.bio}</p>
                     <div>
-                      <h4 className="text-lg font-semibold text-amber-300 mb-2">
+                      <h4 className="text-lg font-semibold text-amber-700 mb-2">
                         Key Achievements
                       </h4>
                       <ul className="space-y-2">
                         {selectedMonarch.achievements.map(
                           (achievement, index) => (
                             <li key={index} className="flex items-start gap-2">
-                              <span className="text-amber-300 mt-1">•</span>
-                              <span className="text-white/80">
+                              <span className="text-amber-600 mt-1">•</span>
+                              <span className="text-amber-800">
                                 {achievement}
                               </span>
                             </li>
@@ -294,10 +294,10 @@ export default function RoyalHeritagePage() {
         <ScrollReveal delay={0.2}>
           <section className="mb-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500">
+              <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
                 Royal Artifacts
               </h2>
-              <p className="text-white/80 max-w-2xl mx-auto">
+              <p className="text-amber-800 max-w-2xl mx-auto">
                 Sacred objects that embody the spiritual and political authority
                 of Epe&apos;s monarchy, preserved through generations
               </p>
@@ -312,7 +312,7 @@ export default function RoyalHeritagePage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                  className="bg-gradient-to-br from-amber-900/20 to-purple-900/20 backdrop-blur-sm rounded-xl overflow-hidden border border-amber-500/20 shadow-lg"
+                  className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-sm rounded-xl overflow-hidden border border-amber-300/50 shadow-lg"
                 >
                   <div className="relative h-52">
                     <Image
@@ -323,11 +323,13 @@ export default function RoyalHeritagePage() {
                     />
                   </div>
                   <div className="p-5">
-                    <h3 className="text-xl font-bold text-amber-300 mb-1">
+                    <h3 className="text-xl font-bold text-amber-700 mb-1">
                       {artifact.name}
                     </h3>
-                    <p className="text-sm text-white/60 mb-3">{artifact.age}</p>
-                    <p className="text-white/80 text-sm">
+                    <p className="text-sm text-amber-600 mb-3">
+                      {artifact.age}
+                    </p>
+                    <p className="text-amber-800 text-sm">
                       {artifact.description}
                     </p>
                   </div>
@@ -341,10 +343,10 @@ export default function RoyalHeritagePage() {
         <ScrollReveal delay={0.4}>
           <section className="mb-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500">
+              <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
                 Royal Ceremonies
               </h2>
-              <p className="text-white/80 max-w-2xl mx-auto">
+              <p className="text-amber-800 max-w-2xl mx-auto">
                 Sacred rituals that connect the monarchy to the spiritual realm
                 and reinforce the traditional governance of the kingdom
               </p>
@@ -364,12 +366,12 @@ export default function RoyalHeritagePage() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <h3 className="text-2xl font-bold text-amber-300 mb-2">
+                  <h3 className="text-2xl font-bold text-amber-200 mb-2">
                     Royal Coronation
                   </h3>
-                  <p className="text-white/90">
+                  <p className="text-amber-50">
                     The sacred ceremony where a new monarch is installed with
                     ancient rituals that connect them to ancestors and deity
                     protectors of the land.
@@ -383,12 +385,12 @@ export default function RoyalHeritagePage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-amber-900/30 to-purple-900/30 backdrop-blur-md rounded-xl p-6 border border-amber-500/20"
+                  className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50"
                 >
-                  <h3 className="text-xl font-bold text-amber-300 mb-3">
+                  <h3 className="text-xl font-bold text-amber-700 mb-3">
                     Ipebi Seclusion
                   </h3>
-                  <p className="text-white/80">
+                  <p className="text-amber-800">
                     Before coronation, the king-elect undergoes a period of
                     seclusion called &quot;Ipebi where they learn royal customs,
                     spiritual practices, and receive wisdom from ancestors. This
@@ -402,12 +404,12 @@ export default function RoyalHeritagePage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-amber-900/30 to-purple-900/30 backdrop-blur-md rounded-xl p-6 border border-amber-500/20"
+                  className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50"
                 >
-                  <h3 className="text-xl font-bold text-amber-300 mb-3">
+                  <h3 className="text-xl font-bold text-amber-700 mb-3">
                     Annual Royal Blessing
                   </h3>
-                  <p className="text-white/80">
+                  <p className="text-amber-800">
                     Each year, the monarch performs rituals to bless the land
                     and ensure prosperity for the kingdom. Citizens gather to
                     receive royal blessings and reaffirm their connection to the
@@ -420,12 +422,12 @@ export default function RoyalHeritagePage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-amber-900/30 to-purple-900/30 backdrop-blur-md rounded-xl p-6 border border-amber-500/20"
+                  className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50"
                 >
-                  <h3 className="text-xl font-bold text-amber-300 mb-3">
+                  <h3 className="text-xl font-bold text-amber-700 mb-3">
                     Royal Court Proceedings
                   </h3>
-                  <p className="text-white/80">
+                  <p className="text-amber-800">
                     Weekly court sessions where the king and royal council hear
                     disputes, make proclamations, and discuss matters affecting
                     the kingdom. These sessions maintain the traditional
@@ -441,14 +443,14 @@ export default function RoyalHeritagePage() {
         <ScrollReveal delay={0.6}>
           <section className="relative rounded-3xl overflow-hidden">
             <div className="absolute inset-0 bg-[url('/palace.jpg')] bg-cover bg-center"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-purple-900/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-200/90 to-amber-100/90"></div>
 
             <div className="relative z-10 py-16 px-8 md:px-16 grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500">
+                <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
                   Visit the Royal Palace
                 </h2>
-                <p className="text-white/90 mb-8">
+                <p className="text-amber-800 mb-8">
                   Experience the majestic royal palace of Epe, where centuries
                   of history come alive through guided tours, royal exhibitions,
                   and special ceremonies open to the public during the Ojude Oba
@@ -456,10 +458,10 @@ export default function RoyalHeritagePage() {
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="bg-amber-400 rounded-full p-1 mt-1">
+                    <div className="bg-amber-500 rounded-full p-1 mt-1">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-purple-900"
+                        className="h-4 w-4 text-amber-50"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -470,15 +472,15 @@ export default function RoyalHeritagePage() {
                         />
                       </svg>
                     </div>
-                    <span className="text-white/90">
+                    <span className="text-amber-800">
                       Guided tours available Tuesday to Sunday, 10am - 4pm
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="bg-amber-400 rounded-full p-1 mt-1">
+                    <div className="bg-amber-500 rounded-full p-1 mt-1">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-purple-900"
+                        className="h-4 w-4 text-amber-50"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -489,15 +491,15 @@ export default function RoyalHeritagePage() {
                         />
                       </svg>
                     </div>
-                    <span className="text-white/90">
+                    <span className="text-amber-800">
                       Royal artifact exhibitions in the Palace Museum
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="bg-amber-400 rounded-full p-1 mt-1">
+                    <div className="bg-amber-500 rounded-full p-1 mt-1">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-purple-900"
+                        className="h-4 w-4 text-amber-50"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -508,7 +510,7 @@ export default function RoyalHeritagePage() {
                         />
                       </svg>
                     </div>
-                    <span className="text-white/90">
+                    <span className="text-amber-800">
                       Special access to royal courtyards during Ojude Oba
                       festival
                     </span>
@@ -516,7 +518,7 @@ export default function RoyalHeritagePage() {
                 </div>
 
                 <motion.button
-                  className="mt-8 px-8 py-3 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full text-white font-bold shadow-lg"
+                  className="mt-8 px-8 py-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full text-white font-bold shadow-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -525,29 +527,29 @@ export default function RoyalHeritagePage() {
               </div>
 
               <motion.div
-                className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg"
+                className="bg-amber-100/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50 shadow-lg"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold text-amber-300 mb-4">
+                <h3 className="text-xl font-semibold text-amber-700 mb-4">
                   Opening Hours
                 </h3>
-                <div className="space-y-3 text-white/90">
+                <div className="space-y-3 text-amber-800">
                   <div className="flex justify-between">
                     <span>Monday</span>
                     <span>Closed (Royal Court Day)</span>
                   </div>
-                  <div className="flex justify-between border-b border-white/10 pb-2">
+                  <div className="flex justify-between border-b border-amber-300/30 pb-2">
                     <span>Tuesday - Friday</span>
                     <span>10:00 AM - 4:00 PM</span>
                   </div>
-                  <div className="flex justify-between border-b border-white/10 pb-2">
+                  <div className="flex justify-between border-b border-amber-300/30 pb-2">
                     <span>Saturday</span>
                     <span>9:00 AM - 5:00 PM</span>
                   </div>
-                  <div className="flex justify-between border-b border-white/10 pb-2">
+                  <div className="flex justify-between border-b border-amber-300/30 pb-2">
                     <span>Sunday</span>
                     <span>12:00 PM - 4:00 PM</span>
                   </div>
