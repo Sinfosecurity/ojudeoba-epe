@@ -212,13 +212,13 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-amber-700">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-amber-100 to-amber-200">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-gradient-to-r from-yellow-300/10 to-amber-500/10 backdrop-blur-sm"
+            className="absolute rounded-full bg-gradient-to-r from-yellow-400/10 to-amber-300/10 backdrop-blur-sm"
             style={{
               width: `${Math.random() * 300 + 100}px`,
               height: `${Math.random() * 300 + 100}px`,
@@ -241,7 +241,7 @@ export default function GalleryPage() {
 
       {/* Hero Section */}
       <header className="relative h-[400px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-indigo-900/90 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-amber-700/90 z-10"></div>
         <div className="absolute inset-0 bg-[url('/gallery-hero.jpg')] bg-cover bg-center"></div>
 
         <div className="relative z-20 flex items-center justify-center h-full text-center px-4">
@@ -250,7 +250,7 @@ export default function GalleryPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500">
+            <h1 className="text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">
               Royal Gallery
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
@@ -276,8 +276,8 @@ export default function GalleryPage() {
               onClick={() => setSelectedFilter(filter.value)}
               className={`px-6 py-3 rounded-xl font-medium transition-all ${
                 selectedFilter === filter.value
-                  ? "bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg"
-                  : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
+                  ? "bg-amber-500 text-white shadow-lg"
+                  : "bg-amber-100 text-amber-800 hover:bg-amber-200"
               }`}
             >
               {filter.label}
@@ -300,7 +300,7 @@ export default function GalleryPage() {
               className="group"
             >
               <Link href={`/gallery/profile/${profile.id}`}>
-                <div className="bg-gradient-to-br from-amber-900/30 to-purple-900/30 backdrop-blur-md rounded-xl overflow-hidden border border-amber-500/20 shadow-xl h-full">
+                <div className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl overflow-hidden border border-amber-300/50 shadow-xl h-full">
                   <div className="h-60 relative overflow-hidden">
                     <Image
                       src={profile.image}
@@ -308,7 +308,7 @@ export default function GalleryPage() {
                       fill
                       className="object-cover transform group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-amber-800/80 via-amber-700/30 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 w-full p-4">
                       <div className="inline-block px-3 py-1 mb-2 bg-amber-500/70 backdrop-blur-sm rounded-full text-xs font-medium text-white">
                         {profile.category}
@@ -316,18 +316,18 @@ export default function GalleryPage() {
                       <h3 className="text-lg font-bold text-white truncate">
                         {profile.name}
                       </h3>
-                      <p className="text-amber-300 text-sm">{profile.title}</p>
+                      <p className="text-amber-200 text-sm">{profile.title}</p>
                     </div>
                   </div>
                   <div className="p-4">
-                    <p className="text-white/80 text-sm line-clamp-3">
+                    <p className="text-amber-800 text-sm line-clamp-3">
                       {profile.description}
                     </p>
                     <div className="mt-4 flex items-center justify-between">
-                      <span className="text-amber-300 text-xs">
+                      <span className="text-amber-700 text-xs">
                         {profile.period}
                       </span>
-                      <span className="text-white/70 text-sm flex items-center gap-1 group-hover:text-amber-300 transition-colors">
+                      <span className="text-amber-700 text-sm flex items-center gap-1 group-hover:text-amber-500 transition-colors">
                         View Details
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -362,7 +362,7 @@ export default function GalleryPage() {
             <div className="inline-block p-4 rounded-full bg-amber-500/20 mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 text-amber-400"
+                className="h-10 w-10 text-amber-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -375,10 +375,10 @@ export default function GalleryPage() {
                 />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">
+            <h3 className="text-2xl font-bold text-amber-700 mb-2">
               No profiles found
             </h3>
-            <p className="text-white/70">
+            <p className="text-amber-800">
               Try selecting a different category or check back later for
               updates.
             </p>
@@ -387,7 +387,7 @@ export default function GalleryPage() {
       </main>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 bg-gradient-to-br from-indigo-800/50 to-purple-900/50 backdrop-blur-sm">
+      <section className="py-16 px-4 bg-gradient-to-r from-amber-700/60 to-amber-600/60 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -395,16 +395,16 @@ export default function GalleryPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500">
+            <h2 className="text-3xl font-bold mb-4 text-amber-50">
               Join Us in Preserving Our Heritage
             </h2>
-            <p className="text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-amber-100 mb-8 max-w-2xl mx-auto">
               Help us document and preserve the rich history and cultural
               heritage of Epe by contributing historical photos, stories, or
               information about our traditional rulers and notable figures.
             </p>
             <motion.button
-              className="px-8 py-3 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full text-white font-bold shadow-lg"
+              className="px-8 py-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full text-white font-bold shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
