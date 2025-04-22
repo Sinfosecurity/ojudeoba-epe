@@ -101,10 +101,10 @@ export default function ProfileDetailsPage() {
   // Loading state
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-amber-700 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-amber-100 to-amber-200 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin mb-4 mx-auto"></div>
-          <p className="text-white/80">Loading profile information...</p>
+          <div className="w-16 h-16 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mb-4 mx-auto"></div>
+          <p className="text-amber-800/80">Loading profile information...</p>
         </div>
       </div>
     );
@@ -113,12 +113,12 @@ export default function ProfileDetailsPage() {
   // 404 state
   if (!profile && !isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-amber-700 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-amber-100 to-amber-200 flex items-center justify-center p-4">
         <div className="text-center max-w-lg mx-auto">
           <div className="mb-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-16 w-16 text-amber-400 mx-auto"
+              className="h-16 w-16 text-amber-500 mx-auto"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -131,10 +131,10 @@ export default function ProfileDetailsPage() {
               />
             </svg>
           </div>
-          <h1 className="text-3xl font-bold text-white mb-4">
+          <h1 className="text-3xl font-bold text-amber-800 mb-4">
             Profile Not Found
           </h1>
-          <p className="text-white/80 mb-6">
+          <p className="text-amber-800/80 mb-6">
             The profile you&apos;re looking for doesn&apos;t exist or has been
             removed.
           </p>
@@ -153,13 +153,13 @@ export default function ProfileDetailsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-amber-700">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-amber-100 to-amber-200">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-gradient-to-r from-yellow-300/10 to-amber-500/10 backdrop-blur-sm"
+            className="absolute rounded-full bg-gradient-to-r from-yellow-400/10 to-amber-300/10 backdrop-blur-sm"
             style={{
               width: `${Math.random() * 300 + 100}px`,
               height: `${Math.random() * 300 + 100}px`,
@@ -173,7 +173,7 @@ export default function ProfileDetailsPage() {
             }}
             transition={{
               duration: Math.random() * 10 + 15,
-              repeat: Infinity,
+              repeat: Number.POSITIVE_INFINITY,
               ease: "easeInOut",
             }}
           />
@@ -185,7 +185,7 @@ export default function ProfileDetailsPage() {
         <div className="mb-8">
           <motion.button
             onClick={() => router.back()}
-            className="flex items-center gap-2 text-white/80 hover:text-white transition-colors bg-white/10 hover:bg-white/20 rounded-lg px-4 py-2"
+            className="flex items-center gap-2 text-amber-800/80 hover:text-amber-800 transition-colors bg-amber-100/50 hover:bg-amber-200/50 rounded-lg px-4 py-2"
             whileHover={{ x: -5 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -196,14 +196,14 @@ export default function ProfileDetailsPage() {
 
         {/* Profile Header */}
         <motion.div
-          className="bg-gradient-to-br from-amber-900/30 to-purple-900/30 backdrop-blur-md rounded-2xl overflow-hidden border border-amber-500/20 shadow-xl mb-12"
+          className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-2xl overflow-hidden border border-amber-300/50 shadow-xl mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <div className="relative h-64 md:h-96 overflow-hidden">
             <Image
-              src={profile!.image}
+              src={profile!.image || "/placeholder.svg"}
               alt={profile!.name}
               fill
               className="object-cover"
@@ -250,17 +250,17 @@ export default function ProfileDetailsPage() {
           >
             {/* About */}
             <motion.div
-              className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-md rounded-xl p-6 border border-amber-500/20 shadow-lg"
+              className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50 shadow-lg"
               variants={itemVariants}
             >
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500 mb-4">
+              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mb-4">
                 About
               </h2>
-              <div className="text-white/90 space-y-4">
+              <div className="text-amber-800/90 space-y-4">
                 <p>{profile?.fullDescription || profile?.description}</p>
 
                 {profile?.quote && (
-                  <div className="border-l-4 border-amber-500 pl-4 italic text-amber-300 mt-6">
+                  <div className="border-l-4 border-amber-500 pl-4 italic text-amber-700 mt-6">
                     {profile?.quote}
                   </div>
                 )}
@@ -270,19 +270,19 @@ export default function ProfileDetailsPage() {
             {/* Achievements */}
             {profile?.achievements && (
               <motion.div
-                className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-md rounded-xl p-6 border border-amber-500/20 shadow-lg"
+                className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50 shadow-lg"
                 variants={itemVariants}
               >
-                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500 mb-4">
+                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mb-4">
                   Notable Achievements
                 </h2>
                 <ul className="space-y-3">
                   {profile?.achievements?.map((achievement, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="mt-1 flex-shrink-0">
-                        <Award className="h-5 w-5 text-amber-400" />
+                        <Award className="h-5 w-5 text-amber-500" />
                       </div>
-                      <span className="text-white/90">{achievement}</span>
+                      <span className="text-amber-800/90">{achievement}</span>
                     </li>
                   ))}
                 </ul>
@@ -292,19 +292,21 @@ export default function ProfileDetailsPage() {
             {/* Responsibilities for Ijoye/Imam */}
             {profile?.responsibilities && (
               <motion.div
-                className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-md rounded-xl p-6 border border-amber-500/20 shadow-lg"
+                className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50 shadow-lg"
                 variants={itemVariants}
               >
-                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500 mb-4">
+                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mb-4">
                   Responsibilities
                 </h2>
                 <ul className="space-y-3">
                   {profile?.responsibilities.map((responsibility, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="mt-1 flex-shrink-0">
-                        <BookOpen className="h-5 w-5 text-amber-400" />
+                        <BookOpen className="h-5 w-5 text-amber-500" />
                       </div>
-                      <span className="text-white/90">{responsibility}</span>
+                      <span className="text-amber-800/90">
+                        {responsibility}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -314,19 +316,19 @@ export default function ProfileDetailsPage() {
             {/* Contributions for Notable Figures */}
             {profile?.contributions && (
               <motion.div
-                className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-md rounded-xl p-6 border border-amber-500/20 shadow-lg"
+                className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50 shadow-lg"
                 variants={itemVariants}
               >
-                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500 mb-4">
+                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mb-4">
                   Contributions to Epe
                 </h2>
                 <ul className="space-y-3">
                   {profile?.contributions.map((contribution, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="mt-1 flex-shrink-0">
-                        <Award className="h-5 w-5 text-amber-400" />
+                        <Award className="h-5 w-5 text-amber-500" />
                       </div>
-                      <span className="text-white/90">{contribution}</span>
+                      <span className="text-amber-800/90">{contribution}</span>
                     </li>
                   ))}
                 </ul>
@@ -343,18 +345,18 @@ export default function ProfileDetailsPage() {
           >
             {/* Quick Info */}
             <motion.div
-              className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-md rounded-xl p-6 border border-amber-500/20 shadow-lg"
+              className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50 shadow-lg"
               variants={itemVariants}
             >
-              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500 mb-4">
+              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mb-4">
                 Quick Information
               </h3>
               <div className="space-y-4">
                 {profile?.coronationDate && (
-                  <div className="flex items-center gap-3 text-white/80">
-                    <Calendar className="h-5 w-5 text-amber-400" />
+                  <div className="flex items-center gap-3 text-amber-800/80">
+                    <Calendar className="h-5 w-5 text-amber-500" />
                     <div>
-                      <p className="text-sm font-medium text-white">
+                      <p className="text-sm font-medium text-amber-800">
                         Coronation Date
                       </p>
                       <p className="text-sm">{profile?.coronationDate}</p>
@@ -362,10 +364,10 @@ export default function ProfileDetailsPage() {
                   </div>
                 )}
                 {profile?.royalFamily && (
-                  <div className="flex items-center gap-3 text-white/80">
-                    <Users className="h-5 w-5 text-amber-400" />
+                  <div className="flex items-center gap-3 text-amber-800/80">
+                    <Users className="h-5 w-5 text-amber-500" />
                     <div>
-                      <p className="text-sm font-medium text-white">
+                      <p className="text-sm font-medium text-amber-800">
                         Royal Family
                       </p>
                       <p className="text-sm">{profile?.royalFamily}</p>
@@ -378,32 +380,32 @@ export default function ProfileDetailsPage() {
             {/* Related Profiles */}
             {relatedProfiles.length > 0 && (
               <motion.div
-                className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-md rounded-xl p-6 border border-amber-500/20 shadow-lg"
+                className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl p-6 border border-amber-300/50 shadow-lg"
                 variants={itemVariants}
               >
-                <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500 mb-4">
+                <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mb-4">
                   Related Profiles
                 </h3>
                 <div className="space-y-4">
                   {relatedProfiles.map((related) => (
                     <Link href={`/gallery/${related?.id}`} key={related?.id}>
                       <motion.div
-                        className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
+                        className="flex items-center gap-4 p-3 rounded-lg hover:bg-amber-200/50 transition-colors cursor-pointer"
                         whileHover={{ x: 5 }}
                       >
                         <div className="relative w-12 h-12 rounded-full overflow-hidden">
                           <Image
-                            src={related?.image}
+                            src={related?.image || "/placeholder.svg"}
                             alt={related?.name}
                             fill
                             className="object-cover"
                           />
                         </div>
                         <div>
-                          <h4 className="text-white font-medium">
+                          <h4 className="text-amber-800 font-medium">
                             {related?.name}
                           </h4>
-                          <p className="text-white/60 text-sm">
+                          <p className="text-amber-700/60 text-sm">
                             {related?.title}
                           </p>
                         </div>
