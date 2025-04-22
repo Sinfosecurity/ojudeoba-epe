@@ -24,13 +24,13 @@ interface Event {
   isFeatured: boolean;
 }
 
-// Update the categoryColors object with the correct type
+// Update the categoryColors object with the correct type and amber/yellow colors
 const categoryColors: Record<EventCategory, string> = {
-  "Main Event": "from-purple-600 to-indigo-700",
-  Performance: "from-pink-500 to-rose-600",
+  "Main Event": "from-amber-500 to-yellow-600",
+  Performance: "from-amber-400 to-orange-500",
   Exclusive: "from-amber-500 to-orange-600",
-  Family: "from-teal-500 to-emerald-600",
-  Sports: "from-blue-500 to-cyan-600",
+  Family: "from-amber-400 to-yellow-500",
+  Sports: "from-amber-500 to-yellow-600",
 };
 
 // Event data
@@ -209,13 +209,13 @@ export default function EventsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-700 via-purple-600 to-pink-600">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-amber-100 to-amber-200">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-white/5 backdrop-blur-sm"
+            className="absolute rounded-full bg-gradient-to-r from-yellow-400/10 to-amber-300/10 backdrop-blur-sm"
             style={{
               width: `${Math.random() * 300 + 100}px`,
               height: `${Math.random() * 300 + 100}px`,
@@ -229,7 +229,7 @@ export default function EventsPage() {
             }}
             transition={{
               duration: Math.random() * 10 + 15,
-              repeat: Infinity,
+              repeat: Number.POSITIVE_INFINITY,
               ease: "easeInOut",
             }}
           />
@@ -238,7 +238,7 @@ export default function EventsPage() {
 
       {/* Hero Section */}
       <header className="relative h-[400px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-700/90 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-amber-100/90 z-10"></div>
         <div className="absolute inset-0 bg-[url('/events-banner.jpg')] bg-cover bg-center"></div>
 
         <div className="relative z-20 flex items-center justify-center h-full text-center px-4">
@@ -247,10 +247,10 @@ export default function EventsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-100">
+            <h1 className="text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
               Festival Events
             </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl text-amber-800/90 max-w-2xl mx-auto">
               Explore the schedule of exciting events during the Ojude Oba
               Festival, from royal ceremonies to cultural performances and
               community celebrations
@@ -262,7 +262,7 @@ export default function EventsPage() {
       <main className="max-w-7xl mx-auto px-4 py-12 relative z-10">
         {/* View Switcher */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-          <div className="flex bg-white/10 backdrop-blur-md rounded-full p-1 border border-white/20">
+          <div className="flex bg-amber-100/50 backdrop-blur-md rounded-full p-1 border border-amber-300/50">
             {[
               { id: "featured", label: "Featured Events" },
               { id: "all", label: "All Events" },
@@ -273,8 +273,8 @@ export default function EventsPage() {
                 onClick={() => setActiveView(view.id)}
                 className={`px-6 py-2 rounded-full transition-all ${
                   activeView === view.id
-                    ? "bg-white text-purple-700 font-medium shadow"
-                    : "text-white hover:bg-white/10"
+                    ? "bg-amber-500 text-white font-medium shadow"
+                    : "text-amber-800/70 hover:text-amber-800 hover:bg-amber-200/50"
                 }`}
               >
                 {view.label}
@@ -287,13 +287,13 @@ export default function EventsPage() {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="bg-amber-100/50 backdrop-blur-md border border-amber-300/50 rounded-full px-4 py-2 text-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
               >
                 {categories.map((category) => (
                   <option
                     key={category}
                     value={category}
-                    className="bg-purple-900 text-white"
+                    className="bg-amber-50 text-amber-800"
                   >
                     {category}
                   </option>
@@ -305,16 +305,16 @@ export default function EventsPage() {
               <select
                 value={selectedDate}
                 onChange={(e) => setSelectedDate(e.target.value)}
-                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="bg-amber-100/50 backdrop-blur-md border border-amber-300/50 rounded-full px-4 py-2 text-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
               >
-                <option value="All" className="bg-purple-900 text-white">
+                <option value="All" className="bg-amber-50 text-amber-800">
                   All Dates
                 </option>
                 {eventDates.map(({ date }) => (
                   <option
                     key={date}
                     value={date}
-                    className="bg-purple-900 text-white"
+                    className="bg-amber-50 text-amber-800"
                   >
                     {date}
                   </option>
@@ -342,7 +342,7 @@ export default function EventsPage() {
                     onClick={() => openEventModal(event)}
                   >
                     <Image
-                      src={event.image}
+                      src={event.image || "/placeholder.svg"}
                       alt={event.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -395,7 +395,7 @@ export default function EventsPage() {
                         {event.description}
                       </p>
                       <motion.button
-                        className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full text-white font-bold shadow-lg"
+                        className="px-6 py-3 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full text-white font-bold shadow-lg"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -415,12 +415,12 @@ export default function EventsPage() {
                     key={event.id}
                     variants={itemVariants}
                     whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                    className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 shadow-lg cursor-pointer"
+                    className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl overflow-hidden border border-amber-300/50 shadow-lg cursor-pointer"
                     onClick={() => openEventModal(event)}
                   >
                     <div className="relative h-52">
                       <Image
-                        src={event.image}
+                        src={event.image || "/placeholder.svg"}
                         alt={event.title}
                         fill
                         className="object-cover transition-transform duration-500 hover:scale-110"
@@ -434,10 +434,10 @@ export default function EventsPage() {
                       </div>
                     </div>
                     <div className="p-6 space-y-4">
-                      <h3 className="text-xl font-bold text-white">
+                      <h3 className="text-xl font-bold text-amber-800">
                         {event.title}
                       </h3>
-                      <div className="flex items-center text-white/80 text-sm">
+                      <div className="flex items-center text-amber-800/80 text-sm">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-4 w-4 mr-1"
@@ -454,7 +454,7 @@ export default function EventsPage() {
                         </svg>
                         <span>{event.date}</span>
                       </div>
-                      <div className="flex items-center text-white/80 text-sm">
+                      <div className="flex items-center text-amber-800/80 text-sm">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-4 w-4 mr-1"
@@ -471,7 +471,7 @@ export default function EventsPage() {
                         </svg>
                         <span>{event.time}</span>
                       </div>
-                      <div className="flex items-center text-white/80 text-sm">
+                      <div className="flex items-center text-amber-800/80 text-sm">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-4 w-4 mr-1"
@@ -496,7 +496,7 @@ export default function EventsPage() {
                       </div>
                       <div className="pt-2">
                         <motion.button
-                          className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-full text-white text-sm font-medium"
+                          className="px-4 py-2 bg-amber-500/20 hover:bg-amber-500/30 rounded-full text-amber-800 text-sm font-medium"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
@@ -524,12 +524,12 @@ export default function EventsPage() {
                   key={event.id}
                   variants={itemVariants}
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                  className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 shadow-lg cursor-pointer"
+                  className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-xl overflow-hidden border border-amber-300/50 shadow-lg cursor-pointer"
                   onClick={() => openEventModal(event)}
                 >
                   <div className="relative h-52">
                     <Image
-                      src={event.image}
+                      src={event.image || "/placeholder.svg"}
                       alt={event.title}
                       fill
                       className="object-cover transition-transform duration-500 hover:scale-110"
@@ -543,10 +543,10 @@ export default function EventsPage() {
                     </div>
                   </div>
                   <div className="p-6 space-y-4">
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-xl font-bold text-amber-800">
                       {event.title}
                     </h3>
-                    <div className="flex items-center text-white/80 text-sm">
+                    <div className="flex items-center text-amber-800/80 text-sm">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4 mr-1"
@@ -563,7 +563,7 @@ export default function EventsPage() {
                       </svg>
                       <span>{event.date}</span>
                     </div>
-                    <div className="flex items-center text-white/80 text-sm">
+                    <div className="flex items-center text-amber-800/80 text-sm">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4 mr-1"
@@ -580,7 +580,7 @@ export default function EventsPage() {
                       </svg>
                       <span>{event.time}</span>
                     </div>
-                    <div className="flex items-center text-white/80 text-sm">
+                    <div className="flex items-center text-amber-800/80 text-sm">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4 mr-1"
@@ -603,12 +603,12 @@ export default function EventsPage() {
                       </svg>
                       <span>{event.location}</span>
                     </div>
-                    <p className="text-white/70 text-sm line-clamp-3">
+                    <p className="text-amber-800/70 text-sm line-clamp-3">
                       {event.description}
                     </p>
                     <div className="pt-2">
                       <motion.button
-                        className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-full text-white text-sm font-medium"
+                        className="px-4 py-2 bg-amber-500/20 hover:bg-amber-500/30 rounded-full text-amber-800 text-sm font-medium"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -624,12 +624,12 @@ export default function EventsPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-10 max-w-md mx-auto">
+                <div className="bg-amber-100/70 backdrop-blur-md rounded-2xl p-10 max-w-md mx-auto border border-amber-300/50">
                   <div className="text-5xl mb-4">🔍</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-2xl font-bold text-amber-800 mb-2">
                     No events found
                   </h3>
-                  <p className="text-white/70">
+                  <p className="text-amber-800/70">
                     Try adjusting your filters to find events
                   </p>
                 </div>
@@ -653,9 +653,9 @@ export default function EventsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: index * 0.1 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 shadow-lg"
+                  className="bg-gradient-to-br from-amber-100/70 to-amber-200/70 backdrop-blur-md rounded-2xl overflow-hidden border border-amber-300/50 shadow-lg"
                 >
-                  <div className="bg-gradient-to-r from-purple-800 to-blue-700 p-6">
+                  <div className="bg-gradient-to-r from-amber-500 to-yellow-500 p-6">
                     <h3 className="text-2xl font-bold text-white">
                       {day.date}
                     </h3>
@@ -666,12 +666,12 @@ export default function EventsPage() {
                       day.events.map((event) => (
                         <div
                           key={event.id}
-                          className="flex flex-col md:flex-row gap-6 items-center p-4 hover:bg-white/5 rounded-xl transition-colors cursor-pointer"
+                          className="flex flex-col md:flex-row gap-6 items-center p-4 hover:bg-amber-200/50 rounded-xl transition-colors cursor-pointer"
                           onClick={() => openEventModal(event)}
                         >
                           <div className="relative w-full md:w-36 h-28 flex-shrink-0 rounded-lg overflow-hidden">
                             <Image
-                              src={event.image}
+                              src={event.image || "/placeholder.svg"}
                               alt={event.title}
                               fill
                               className="object-cover"
@@ -679,7 +679,7 @@ export default function EventsPage() {
                           </div>
                           <div className="flex-grow">
                             <div className="flex items-center justify-between mb-2">
-                              <h4 className="text-xl font-bold text-white">
+                              <h4 className="text-xl font-bold text-amber-800">
                                 {event.title}
                               </h4>
                               <span
@@ -690,7 +690,7 @@ export default function EventsPage() {
                                 {event.category}
                               </span>
                             </div>
-                            <div className="flex flex-wrap gap-4 text-white/80 text-sm mb-3">
+                            <div className="flex flex-wrap gap-4 text-amber-800/80 text-sm mb-3">
                               <div className="flex items-center">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -732,12 +732,12 @@ export default function EventsPage() {
                                 <span>{event.location}</span>
                               </div>
                             </div>
-                            <p className="text-white/70 text-sm">
+                            <p className="text-amber-800/70 text-sm">
                               {event.description.substring(0, 120)}...
                             </p>
                           </div>
                           <motion.button
-                            className="flex-shrink-0 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-full text-white text-sm font-medium"
+                            className="flex-shrink-0 px-4 py-2 bg-amber-500/20 hover:bg-amber-500/30 rounded-full text-amber-800 text-sm font-medium"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
@@ -747,7 +747,7 @@ export default function EventsPage() {
                       ))
                     ) : (
                       <div className="text-center py-8">
-                        <p className="text-white/70">
+                        <p className="text-amber-800/70">
                           No events scheduled for this day
                         </p>
                       </div>
@@ -765,27 +765,29 @@ export default function EventsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-24 bg-gradient-to-r from-pink-600/90 to-purple-700/90 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/10 shadow-xl text-center"
+          className="mt-24 bg-gradient-to-r from-amber-500/30 to-amber-600/30 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-amber-300/50 shadow-xl text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-6">
             Get Your Festival Pass
           </h2>
-          <p className="text-white/90 max-w-2xl mx-auto mb-8">
+          <p className="text-amber-800/90 max-w-2xl mx-auto mb-8">
             Secure your access to all festival events with our convenient
             passes. Choose from single-day passes or the full festival
             experience.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-2">Day Pass</h3>
-              <div className="text-3xl font-bold text-amber-300 mb-4">
+            <div className="bg-amber-100/50 backdrop-blur-md rounded-xl p-6 border border-amber-300/50">
+              <h3 className="text-xl font-bold text-amber-800 mb-2">
+                Day Pass
+              </h3>
+              <div className="text-3xl font-bold text-amber-600 mb-4">
                 ₦2,500
               </div>
-              <ul className="text-white/80 text-sm space-y-2 mb-6">
+              <ul className="text-amber-800/80 text-sm space-y-2 mb-6">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -800,7 +802,7 @@ export default function EventsPage() {
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -815,7 +817,7 @@ export default function EventsPage() {
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -837,21 +839,21 @@ export default function EventsPage() {
               </motion.button>
             </div>
 
-            <div className="bg-gradient-to-br from-amber-500/20 to-orange-500/20 backdrop-blur-md rounded-xl p-6 border-2 border-amber-400/50 transform scale-105">
+            <div className="bg-gradient-to-br from-amber-400/20 to-orange-400/20 backdrop-blur-md rounded-xl p-6 border-2 border-amber-400/50 transform scale-105">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-orange-500 px-4 py-1 rounded-full text-sm font-bold text-white">
                 Most Popular
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-amber-800 mb-2">
                 Full Festival Pass
               </h3>
-              <div className="text-3xl font-bold text-amber-300 mb-4">
+              <div className="text-3xl font-bold text-amber-600 mb-4">
                 ₦8,000
               </div>
-              <ul className="text-white/80 text-sm space-y-2 mb-6">
+              <ul className="text-amber-800/80 text-sm space-y-2 mb-6">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -866,7 +868,7 @@ export default function EventsPage() {
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -881,7 +883,7 @@ export default function EventsPage() {
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -896,7 +898,7 @@ export default function EventsPage() {
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -918,18 +920,18 @@ export default function EventsPage() {
               </motion.button>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-2">
+            <div className="bg-amber-100/50 backdrop-blur-md rounded-xl p-6 border border-amber-300/50">
+              <h3 className="text-xl font-bold text-amber-800 mb-2">
                 VIP Experience
               </h3>
-              <div className="text-3xl font-bold text-amber-300 mb-4">
+              <div className="text-3xl font-bold text-amber-600 mb-4">
                 ₦15,000
               </div>
-              <ul className="text-white/80 text-sm space-y-2 mb-6">
+              <ul className="text-amber-800/80 text-sm space-y-2 mb-6">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -944,7 +946,7 @@ export default function EventsPage() {
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -959,7 +961,7 @@ export default function EventsPage() {
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-green-400"
+                    className="h-5 w-5 text-amber-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -981,7 +983,7 @@ export default function EventsPage() {
               </motion.button>
             </div>
           </div>
-          <p className="text-white/60 text-sm">
+          <p className="text-amber-800/60 text-sm">
             * All passes include access to the festival grounds and basic
             amenities. Terms and conditions apply.
           </p>
