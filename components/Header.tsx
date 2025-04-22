@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// import Image from "next/image";
+// import Image from "next/image"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -60,7 +60,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-indigo-900/95 backdrop-blur-md shadow-lg py-2"
+          ? "bg-amber-100/95 backdrop-blur-md shadow-lg py-2 border-b border-amber-200/50"
           : "bg-transparent py-4"
       }`}
     >
@@ -74,12 +74,12 @@ export default function Header() {
             transition={{ duration: 0.5 }}
           >
             <div className="h-12 w-12 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 flex items-center justify-center shadow-lg relative overflow-hidden">
-              <div className="absolute inset-1 bg-purple-900 rounded-full flex items-center justify-center">
-                <span className="text-amber-400 font-bold text-xl">OE</span>
+              <div className="absolute inset-1 bg-amber-50 rounded-full flex items-center justify-center">
+                <span className="text-amber-600 font-bold text-xl">OE</span>
               </div>
             </div>
             <div>
-              <h1 className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500">
+              <h1 className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
                 Ojude Oba Epe
               </h1>
               <div className="h-0.5 w-full bg-gradient-to-r from-amber-400 to-transparent"></div>
@@ -99,8 +99,8 @@ export default function Header() {
               <motion.div
                 className={`px-4 py-2 rounded-lg relative text-sm font-medium transition-all ${
                   pathname === link.href
-                    ? "text-amber-300"
-                    : "text-white/80 hover:text-white"
+                    ? "text-amber-700"
+                    : "text-amber-800/80 hover:text-amber-800"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
@@ -108,7 +108,7 @@ export default function Header() {
                 {link.label}
                 {pathname === link.href && (
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-400 to-amber-600"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600"
                     layoutId="navIndicator"
                     transition={{ duration: 0.3 }}
                   />
@@ -128,7 +128,7 @@ export default function Header() {
 
         {/* Mobile menu toggle */}
         <motion.button
-          className="md:hidden text-white p-2 rounded-lg bg-indigo-800/50 backdrop-blur-sm border border-indigo-700/30"
+          className="md:hidden text-amber-800 p-2 rounded-lg bg-amber-200/50 backdrop-blur-sm border border-amber-300/30"
           onClick={toggleMenu}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -142,7 +142,7 @@ export default function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden absolute top-full left-0 right-0 overflow-hidden bg-gradient-to-b from-indigo-900/95 to-purple-900/95 backdrop-blur-md shadow-lg"
+            className="md:hidden absolute top-full left-0 right-0 overflow-hidden bg-gradient-to-b from-amber-100/95 to-amber-200/95 backdrop-blur-md shadow-lg border-t border-amber-200/50"
             variants={mobileMenuVariants}
             initial="closed"
             animate="open"
@@ -160,8 +160,8 @@ export default function Header() {
                     onClick={() => setIsOpen(false)}
                     className={`block py-3 px-4 text-base font-medium rounded-lg my-1 ${
                       pathname === link.href
-                        ? "bg-gradient-to-r from-amber-900/30 to-amber-800/30 text-amber-300 border-l-4 border-amber-500"
-                        : "text-white/80 hover:bg-white/5"
+                        ? "bg-gradient-to-r from-amber-200/50 to-amber-300/50 text-amber-700 border-l-4 border-amber-500"
+                        : "text-amber-800/80 hover:bg-amber-200/30"
                     }`}
                   >
                     {link.label}
@@ -177,13 +177,13 @@ export default function Header() {
 
             {/* Decorative elements */}
             <div className="absolute -bottom-16 -right-16 w-32 h-32 rounded-full bg-amber-500/20 blur-2xl"></div>
-            <div className="absolute -top-16 -left-16 w-32 h-32 rounded-full bg-purple-500/20 blur-2xl"></div>
+            <div className="absolute -top-16 -left-16 w-32 h-32 rounded-full bg-yellow-500/20 blur-2xl"></div>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Ambient backdrop glow */}
-      <div className="absolute -z-10 top-0 left-0 right-0 h-32 bg-gradient-to-b from-indigo-900/50 to-transparent pointer-events-none"></div>
+      <div className="absolute -z-10 top-0 left-0 right-0 h-32 bg-gradient-to-b from-amber-100/50 to-transparent pointer-events-none"></div>
     </header>
   );
 }
