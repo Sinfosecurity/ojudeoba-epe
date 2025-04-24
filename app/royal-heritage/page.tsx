@@ -15,8 +15,8 @@ const royalLineage = [
     id: 1,
     name: "Oba Shefiu Olatunji Adewale",
     reign: "1985 - Present",
-    title: "Oloja of Epe",
-    image: "/epe-01.jpg",
+    title: "Oluepe of Epe",
+    image: "/epe-02.jpg",
     bio: "His Royal Majesty Oba Adewale Adesanya has led Epe with wisdom and compassion. Under his reign, the community has seen tremendous cultural revival and modernization while maintaining its rich traditions.",
     achievements: [
       "Established the annual Ojude Oba festival as a national cultural event",
