@@ -27,15 +27,15 @@ const profiles: Profile[] = [
   // Obas (Kings)
   {
     id: "oba-1",
-    name: "HRM Oba Kamorudeen Animashaun",
-    title: "Oloja of Epe",
+    name: "Oba Shefiu Olatunji Adewale",
+    title: "Oluepe of Epe",
     category: "Oba",
     period: "Current",
-    image: "/epe-01.jpg",
+    image: "/epe-02.jpg",
     description:
-      "The current Oloja of Epe, His Royal Majesty Oba Kamorudeen Animashaun, is the traditional ruler who has overseen significant cultural renaissance and development in the region.",
+      "The current Oluepe of Epe, His Royal Majesty Oba Shefiu Olatunji Adewale, is the traditional ruler who has overseen significant cultural renaissance and development in the region.",
     fullDescription:
-      "His Royal Majesty Oba Kamorudeen Animashaun ascended to the throne following a rigorous traditional selection process. As the Oloja of Epe, he has been instrumental in revitalizing cultural practices while embracing modern development. Under his leadership, the Ojude Oba festival has gained national recognition and has become a major cultural tourism attraction. His reign has been marked by efforts to preserve traditional knowledge while adapting to contemporary challenges. The Oba has established various initiatives to document oral histories and traditional practices of the Epe kingdom.",
+      "His Royal Majesty Oba Shefiu Olatunji Adewale ascended to the throne following a rigorous traditional selection process. As the Oluepe of Epe, he has been instrumental in revitalizing cultural practices while embracing modern development. Under his leadership, the Ojude Oba festival has gained national recognition and has become a major cultural tourism attraction. His reign has been marked by efforts to preserve traditional knowledge while adapting to contemporary challenges. The Oba has established various initiatives to document oral histories and traditional practices of the Epe kingdom.",
     coronationDate: "March 15, 2019",
     royalFamily: "Animashaun Royal Dynasty",
     achievements: [

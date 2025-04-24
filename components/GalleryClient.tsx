@@ -9,13 +9,13 @@ const profiles = [
   // Obas (Kings)
   {
     id: "oba-1",
-    name: "HRM Oba Kamorudeen Animashaun",
-    title: "Oloja of Epe",
+    name: "Oba Shefiu Olatunji Adewale",
+    title: "Oluepe of Epe",
     category: "Oba",
     period: "Current",
-    image: "/epe-01.jpg",
+    image: "/epe-02.jpg",
     description:
-      "The current Oloja of Epe, His Royal Majesty Oba Kamorudeen Animashaun, is the traditional ruler who has overseen significant cultural renaissance and development in the region.",
+      "The current Oluepe of Epe, His Royal Majesty Oba Shefiu Olatunji Adewale, is the traditional ruler who has overseen significant cultural renaissance and development in the region.",
     achievements: [
       "Revitalization of the Ojude Oba festival",
       "Establishment of the Epe Heritage Foundation",
