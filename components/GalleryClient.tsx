@@ -23,12 +23,12 @@ const profiles = [
     ],
   },
   {
-    id: "oba-2",
-    name: "HRM Oba Adewale Adedoyin",
-    title: "Former Oloja of Epe",
-    category: "Oba",
+    id: "oloye-01",
+    name: "High Chief Musiliu Adeniyi Kadri",
+    title: "Balogun of Epe Kingdom",
+    category: "Ijoye",
     period: "1985-2019",
-    image: "/epe-01.jpg",
+    image: "/epe-07.jpg",
     description:
       "His Royal Majesty Oba Adewale Adedoyin was known for his wisdom and efforts to modernize Epe while preserving its rich cultural heritage.",
     achievements: [
@@ -38,12 +38,12 @@ const profiles = [
     ],
   },
   {
-    id: "oba-3",
-    name: "HRM Oba Adekunle Oyekan",
-    title: "Former Oloja of Epe",
-    category: "Oba",
+    id: "imam-01",
+    name: "Imam Sa'dallah Abiola Abdur-Rahman, members of league of Imam, and Ulamah of 1st Epe Central Mosque",
+    title: "League of Imama of Epe Kingdom",
+    category: "Imam",
     period: "1965-1984",
-    image: "/epe-01.jpg",
+    image: "/epe-08.jpg",
     description:
       "His Royal Majesty Oba Adekunle Oyekan led Epe through a period of transition and modernization while maintaining traditional governance structures.",
     achievements: [
@@ -55,12 +55,12 @@ const profiles = [
 
   // Ijoyes (Chiefs)
   {
-    id: "ijoye-1",
-    name: "Chief Mustapha Ibrahim",
-    title: "Balogun of Epe",
-    category: "Ijoye",
+    id: "ijoye-02",
+    name: "Members of Olu-Epe Council",
+    title: "Members of Council of Epe Kingdom",
+    category: "Council Members",
     period: "Current",
-    image: "/epe-01.jpg",
+    image: "/epe-13.jpg",
     description:
       "As the Balogun (War Chief) of Epe, Chief Mustapha Ibrahim serves as the head of traditional security and ceremonial military affairs in the kingdom.",
     responsibilities: [
@@ -71,11 +71,11 @@ const profiles = [
   },
   {
     id: "ijoye-2",
-    name: "Chief Adebisi Omotayo",
-    title: "Otun Olori Ebi",
-    category: "Ijoye",
+    name: "Members of the Young Brothers Club",
+    title: "Young Brothers Club",
+    category: "Club Members",
     period: "Current",
-    image: "/epe-01.jpg",
+    image: "/epe-09.jpg",
     description:
       "Chief Adebisi Omotayo holds the title of Otun Olori Ebi, serving as a principal advisor to the Oba and representative of family lineages in the kingdom.",
     responsibilities: [
@@ -86,49 +86,17 @@ const profiles = [
   },
   {
     id: "ijoye-3",
-    name: "Chief Rasheedat Adu",
-    title: "Iyalode of Epe",
-    category: "Ijoye",
+    name: "Members of Royal Bundles Club",
+    title: "Royal Bundles Club",
+    category: "Club Members",
     period: "Current",
-    image: "/epe-01.jpg",
+    image: "/epe-10.jpg",
     description:
       "Chief Rasheedat Adu serves as the Iyalode, representing women's interests in the traditional council and overseeing women's affairs in the kingdom.",
     responsibilities: [
       "Advocacy for women's development",
       "Organization of women's participation in cultural events",
       "Supervision of market affairs and trade regulations",
-    ],
-  },
-
-  // Imams
-  {
-    id: "imam-1",
-    name: "Sheikh Abdulrahman Suleiman",
-    title: "Chief Imam of Epe",
-    category: "Imam",
-    period: "Current",
-    image: "/epe-01.jpg",
-    description:
-      "Sheikh Abdulrahman Suleiman serves as the Chief Imam of Epe, leading prayers and providing spiritual guidance to the Muslim community.",
-    responsibilities: [
-      "Leading Friday congregational prayers",
-      "Religious education and guidance",
-      "Representation of Islamic interests in community affairs",
-    ],
-  },
-  {
-    id: "imam-2",
-    name: "Imam Yunus Akinloye",
-    title: "Deputy Chief Imam",
-    category: "Imam",
-    period: "Current",
-    image: "/epe-01.jpg",
-    description:
-      "Imam Yunus Akinloye assists the Chief Imam in religious duties and community service, focusing particularly on youth Islamic education.",
-    responsibilities: [
-      "Coordination of Islamic schools (madrasas)",
-      "Organization of Ramadan activities",
-      "Islamic counseling and community outreach",
     ],
   },
 

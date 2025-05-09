@@ -5,9 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const sliderImages = [
   "/epe-01.jpg",
-  "/epe-02.jpg",
-  "/epe-01.jpg",
-  "/epe-02.jpg",
+  "/epe-12.jpg",
+  "/epe-07.jpg",
+  "/epe-08.jpg",
+  "/epe-09.jpg",
+  "/epe-10.jpg",
 ];
 
 const sponsors = [
