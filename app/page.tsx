@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const sliderImages = [
-  "/epe-01.jpg",
   "/epe-12.jpg",
+  "/epe-13.jpg",
   "/epe-07.jpg",
   "/epe-08.jpg",
   "/epe-09.jpg",
   "/epe-10.jpg",
+  "/epe-01.jpg",
 ];
 
 const sponsors = [
