@@ -10,6 +10,8 @@ const sliderImages = [
   "/epe-08.jpg",
   "/epe-09.jpg",
   "/epe-10.jpg",
+  "/epe-14.jpg",
+  "/epe-15.jpg",
   "/epe-01.jpg",
 ];
 
