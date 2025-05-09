@@ -13,7 +13,7 @@ const profiles = [
     title: "Oluepe of Epe",
     category: "Oba",
     period: "Current",
-    image: "/epe-02.jpg",
+    image: "/epe-12.jpg",
     description:
       "The current Oluepe of Epe, His Royal Majesty Oba Shefiu Olatunji Adewale, is the traditional ruler who has overseen significant cultural renaissance and development in the region.",
     achievements: [
