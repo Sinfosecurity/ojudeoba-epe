@@ -41,7 +41,7 @@ const events: Event[] = [
     date: "June 15, 2025",
     time: "10:00 AM - 2:00 PM",
     location: "Epe Town Square",
-    image: "/epe-01.jpg",
+    image: "/epe-15.jpg",
     description:
       "The grand opening ceremony featuring royal processions, cultural performances, and the official declaration of the festival by His Royal Majesty.",
     category: "Main Event",
@@ -53,7 +53,7 @@ const events: Event[] = [
     date: "June 16, 2025",
     time: "3:00 PM - 6:00 PM",
     location: "Epe Cultural Center",
-    image: "/epe-02.jpg",
+    image: "/epe-14.jpg",
     description:
       "Witness spectacular performances as dance troupes compete to showcase the best of Epe's traditional dances. Special prizes for winners.",
     category: "Performance",
@@ -65,7 +65,7 @@ const events: Event[] = [
     date: "June 16, 2025",
     time: "7:00 PM - 10:00 PM",
     location: "Royal Palace Gardens",
-    image: "/epe-01.jpg",
+    image: "/epe-14.jpg",
     description:
       "An exclusive dinner with the royal family featuring traditional cuisine and entertainment. Limited tickets available.",
     category: "Exclusive",

@@ -138,18 +138,30 @@ export default function AboutPage() {
                   The Festival of Colors and Culture
                 </h2>
                 <p className="text-amber-800">
-                  Ojude Oba, meaning THE KING&apos;s COURTYARD in the Yoruba
-                  language, is a major cultural festival celebrated in Epe,
-                  Lagos State. It brings together the community to pay homage to
-                  the Oba (king) and celebrate the rich cultural heritage of the
-                  Yoruba people.
+                  What today is known globally as Ojude-Oba Fetival started in
+                  Epe in 1853 by the early Muslims in appreciation to Balogun
+                  Ajeniya, the man that donated land for the building of the
+                  first mosque (Atinin) in the entire Epe Division and beyond in
+                  1853. As a sign of respect, Balogun Ajeniya from his house
+                  would lead the Muslim faithfuls to Oba Kosoko being the
+                  paramount ruler at that time. When Oba Kosoko went back to
+                  Lagos Island, the succeeding Baales continue to host the
+                  Muslims on the third day of Eid-Il-Kabir thereby giving the
+                  day a special name Ojo Iki Baale the special day of paying
+                  homage to the Baale.
                 </p>
                 <p className="text-amber-800">
-                  The festival features colorful processions, horse riding
-                  displays, traditional music and dance performances, and
-                  showcases the diverse cultural elements that make Epe unique.
-                  It serves as both a tourist attraction and a way to preserve
-                  and promote cultural identity for future generations.
+                  Today, it is now known as Ojude-Oba with the upgrading of
+                  Baale to Oba. Ordinary people today believe that Ojude-Oba
+                  festival originated from Ijebu-Ode, the home of Ijebu
+                  civilization because of the pomp and pageantry of this
+                  festival and the colourful appearance of Ijebu sons and
+                  daughters at the Ojude-Oba Arena whereas, Ijebu-Ode embraced
+                  Islam in 1879 as a result of the spread of Islam from Epe.
+                  Just the way it started in Epe, Ojude-Oba started there in
+                  Ijebu-Ode in 1892 as homage paying to Awujale Adesunmbo
+                  Tunwase, the man that offered the Muslims land where the first
+                  mosque in Ijebu-Ode was built.
                 </p>
               </div>
             </div>
