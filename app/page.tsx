@@ -105,7 +105,7 @@ export default function HomePage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Learn More
+                Click to Learn More
               </motion.button>
             </motion.div>
           </div>
