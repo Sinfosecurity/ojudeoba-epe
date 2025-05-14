@@ -94,11 +94,11 @@ export default function HomePage() {
               className="text-center text-white px-6"
             >
               <h1 className="text-6xl font-extrabold mb-6 drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-white to-amber-200">
-                Welcome to Ojudeoba Epe
+                Welcome to Ojude Oba Epe
               </h1>
               <p className="text-2xl max-w-2xl mx-auto font-light text-white/90 backdrop-blur-sm bg-white/10 p-6 rounded-xl">
                 An annual celebration of culture, royal heritage, and the unity
-                of the Epe people
+                of the Epe people.
               </p>
               <motion.button
                 className="mt-8 px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl"
